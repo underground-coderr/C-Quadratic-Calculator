@@ -1,0 +1,37 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int
+main ()
+{
+  float a, b, c, x1, x2, realPart, imaginaryPart, discriminant;
+  cout << "Enter the values of a, b, c: ";
+  cin >> a >> b >> c;
+  discriminant = (b * b) - 4 * a * c;
+
+  if (discriminant > 0)
+    {
+      x1 = (-b + sqrt (discriminant)) / (2 * a);
+      x2 = (-b - sqrt (discriminant)) / (2 * a);
+      cout << "Real and Different Roots." << endl;
+      cout << "Root 1: " << x1 << endl << "Root 2: " << x2;
+    }
+  else if (discriminant == 0)
+    {
+      cout << "Real and Equal Roots." << endl;
+      x1 = -b / 2 * a;
+      x2 = -b / 2 * a;
+      cout << "x1=x2, " << "Root: " << x1;
+    }
+
+  else
+    {
+      realPart = -b / (2 * a);
+      imaginaryPart = sqrt (-discriminant) / (2 * a);
+      cout << "Complex and Imaginary Roots." << endl;
+      cout << "x1 = " << realPart << "+" << imaginaryPart << "i" << endl;
+      cout << "x2 = " << realPart << "-" << imaginaryPart << "i" << endl;
+    }
+
+  return 0;
+}
